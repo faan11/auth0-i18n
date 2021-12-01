@@ -5,10 +5,11 @@ echo "Insert your client identifier:"
 read  clientid
 echo "Insert your client secret"
 read clientsecret
-echo "Insert your audience ( without the last slash )"
-read audience
+echo "Insert your domain"
+read domain
 echo "Writing data in the configuration"
 echo "CLIENT=$clientid" > .env
 echo "CS=$clientsecret" >> .env
-echo "AUD=$audience" >> .env
+echo "DOMAIN=$domain" >> .env
+echo "AUDIENCE=$domain/api/v2" >> .env
 ./gentoken.sh

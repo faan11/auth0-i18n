@@ -16,7 +16,7 @@ for row in $(echo "${content}" | jq -r 'keys[]'); do
         #echo $dat
         echo "Output:"
         curl  --request PUT \
-        	 --url "$AUD/prompts/$key/custom-text/$lang" \
+        	 --url "https://$AUDIENCE/prompts/$key/custom-text/$lang" \
           	 --header "authorization: Bearer $TOKEN" \
          	 --header 'content-type: application/json' \
              --data "$dat"
