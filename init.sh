@@ -5,7 +5,7 @@ echo "Insert your client identifier:"
 read  clientid
 echo "Insert your client secret"
 read clientsecret
-echo "Insert your audience"
+echo "Insert your audience ( without the last slash )"
 read audience
 echo "Writing data in the configuration"
 echo "CLIENT=$clientid" > .env
