@@ -1,12 +1,14 @@
 # Auth0-i18n
 
-This tool is used to translate auth0 universal login applications.
+This repo is used to translate auth0 universal login applications.
 I'm not affiliated with Auth0.
 
 auth0-i18n is a set of bash utilities that can be used with a M2M Auth0 application.
+These applications depends on curl, bash, sed and jq.
 They fetch the translations from the i18n.json file. 
 
 The configuration of these tools is saved in the .env and .at file.
+
 
 ## Initialization
 
