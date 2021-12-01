@@ -14,11 +14,13 @@ for row in $(echo "${content}" | jq -r 'keys[]'); do
         #echo $key 
         echo "Applying $lang - $key"
         #echo $dat
-        curl  -s --output /dev/null --request PUT \
-        	 --url "$aud/prompts/$key/custom-text/$lang" \
+        echo "Output:"
+        curl  --request PUT \
+        	 --url "$AUD/prompts/$key/custom-text/$lang" \
           	 --header "authorization: Bearer $TOKEN" \
          	 --header 'content-type: application/json' \
              --data "$dat"
+        echo ""
         sleep 1
    done
   
