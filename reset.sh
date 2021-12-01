@@ -7,10 +7,10 @@ source .env
 for row in $(echo "${content}" | jq -r 'keys[]'); do
    lang=$row
    echo "Reset $lang"
-   for key in $(echo "${content}" | jq -r ".$lang | keys[]"); do
+   for key in $(echo "${content}" | jq -r ".\"$lang\" | keys[]"); do
         
         data=$(echo ${content} | jq -r ".\"$lang\" | .\"$key\" ")
-        dat=$(echo ${content} | jq -r "{\"$key\":.$lang.\"$key\"}")
+        dat=$(echo ${content} | jq -r "{\"$key\":.\"$lang\".\"$key\"}")
         #echo $key 
         #echo $dat
         echo "Reset $lang - $key"
